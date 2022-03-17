@@ -35,8 +35,9 @@ const ProposeUpdateTopology: FC<IProposeProps> = ({ signer, mTx }) => {
 
 	const labelSelect = () => {
 		if (nodeLabels.length !== 0) {
-			const options = nodeLabels.map((v, i) => {
-				return (<option value={i} key={`${i}-${v}`}>{v}</option>)
+			const options = nodeLabels.slice(0,-4).map((v, i) => {
+				const value = i + 4;
+				return (<option value={value} key={`${i}-${v}`}>{v}</option>)
 			})
 			return (
 				<select className="p-3 px-5 rounded-full bg-white font-semibold text-xl" name="label" onChange={labelChange}>
@@ -55,7 +56,7 @@ const ProposeUpdateTopology: FC<IProposeProps> = ({ signer, mTx }) => {
 
 	const valueSelect = () => {
 		if (nodeLabels.length !== 0) {
-			const options = ['none', 'primary industry', 'secondary industry', 'terterm industry'].map((v, i) => {
+			const options = ['none', 'agriculture', 'heavy industry', 'office'].map((v, i) => {
 				return (<option key={`value-${v}`} value={i}>{v}</option>)
 			})
 			return (
@@ -90,7 +91,7 @@ const ProposeUpdateTopology: FC<IProposeProps> = ({ signer, mTx }) => {
 			<div>
 				<div className="font-semibold">Update Node Value:</div>
 				<p className="max-w-lg">changes the value of the selected node. The cooresponding node and its connections are shown below. The values indicate the following.</p>
-				<img className="w-full" src={`${process.env.PUBLIC_URL}topology.png`} alt="topology" />
+				<img className="w-full" src={`${process.env.PUBLIC_URL}city.png`} alt="topology" />
 			</div>
 			<div className="max-w-lg">
 				<div className="flex flex-row justify-between pr-3 text-xl mb-5 items-center">
