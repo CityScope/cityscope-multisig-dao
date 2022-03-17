@@ -3,7 +3,7 @@ import { Connection, PublicKey } from '@solana/web3.js';
 import nIdl from './idl/namaph_multisig.json';
 import mIdl from './idl/serum_multisig.json';
 
-export const projectName = 'namaph-alpha-v0.1.1';
+export const projectName = 'cityscience-v0.1.0';
 export const url = 'https://solana-api.projectserum.com'
 
 export const namaphProgram: PublicKey = new PublicKey(nIdl.metadata.address);
