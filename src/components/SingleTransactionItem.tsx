@@ -78,14 +78,14 @@ const getNamapInstructionInfo = (instruction: Instruction, data: ITransaction) =
 	switch (instruction.name) {
 		case 'updateTopology':
 			{
-				title = 'Update Zoning / ゾーニング更新';
+				title = 'Update Zoning';
 				const updateTopology = instruction.data as IUpdateTopology;
 				contents = <div>node({updateTopology.id}) updates to {updateTopology.value}.</div>;
 				break;
 			}
 		case 'spend':
 			{
-				title = 'DAO pays / 共同出資';
+				title = 'DAO co-financing';
 				const spend = instruction.data as ISpend;
 				const to = data.accounts[2].pubkey;
 				contents =
@@ -121,14 +121,14 @@ const getMultisigInstructionInfo = (instruction: Instruction, data: ITransaction
 	switch (instruction.name) {
 		case 'changeThreshold':
 			{
-				title = 'Change Threshold / 定足数の更新';
+				title = 'Change Threshold';
 				const { threshold } = instruction.data as IThreshold;
 				contents = <div>change threshold to {threshold.toString()}</div>
 				break;
 			}
 		case 'setOwners':
 			{
-				title = 'Change Owners / 構成員の変更';
+				title = 'Change Owners';
 				const { owners } = instruction.data as ISetOwners;
 				contents = 
 				(	<>

@@ -10,7 +10,7 @@ import { faCircleXmark, faCircleExclamation, faCircleCheck } from '@fortawesome/
 const Title = () => {
 	// just for photo readyness...
 	return (
-		<h1 className="text-lg font-semibold flex-auto">{projectName}</h1>
+		<h1 className="text-lg font-semibold flex-auto">Namaph <span className="italic">{projectName}</span></h1>
 	)
 }
 
@@ -57,7 +57,7 @@ const Header = () => {
 					<Title />
 					<Status />
 				</div>
-				<div className="mt-5 mb-3 p-3 bg-white font-semibold">生麩はまちの緑(生態系シミュレーション)のつくり方を『みんな』で育てるプロジェクトです。</div>
+				<div className="mt-5 mb-3 p-3 bg-white font-semibold text-center">"Namaph" is an attempt to develop a biodiversity simulation together with everyone.</div>
 				</div>
 
 				<Navigation />
